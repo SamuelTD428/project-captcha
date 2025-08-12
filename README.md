@@ -1,7 +1,3 @@
-Here’s a revised version of your README for **Project CAPTCHA**. It adds clarity, completeness, and professionalism, addressing setup, usage, contribution, and licensing. You can copy-paste and further tweak as needed!
-
----
-
 # 🧩 Project CAPTCHA
 
 **Project CAPTCHA** is a lightweight, customizable web-based CAPTCHA system designed to verify human interaction and keep bots at bay—without relying on third-party services. Perfect for static sites or projects hosted on GitHub Pages.
