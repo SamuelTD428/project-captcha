@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Captcha</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 2rem;
-      background-color: #f0f0f0;
-    }
-    h1 {
-      color: #333;
-    }
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Checkpoint</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-  <h1>Project CAPTCHA</h1>
-</body>
+    <div class="captcha-container">
+        <div class="checkbox-box" id="checkbox-box">
+            <span class="check-mark"></span>
+        </div>
+        <label for="checkbox-box" class="captcha-text">I'm not a robot</label>
+        <div class="logo">Project CAPTCHA</div>
+    </div>
+
+    <div class="challenge-modal" id="challenge-modal">
+        <div class="challenge-content">
+            <p><strong>Select all squares with a traffic light.</strong></p>
+            <div class="image-grid">
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+                <div class="grid-square" onclick="toggleSquare(this)"></div>
+            </div>
+            <button id="verify-button">Verify</button>
+            <div class="challenge-info">
+                <span><a href="#">Privacy</a> - <a href="#">Terms</a></span>
+            </div>
+        </div>
+    </div>
+
+    <button class="submit-button" id="submit-button" disabled>Submit Form</button>
+
+    <script src="script.js"></script> </body>
 </html>
