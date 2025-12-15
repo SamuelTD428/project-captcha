@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
+/* --- Captcha Box Styling --- */
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.checkbox-box {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #c1c1c1;
+    background-color: #fff;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.captcha-text {
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1; /* Pushes the logo to the right */
+}
+
+.logo {
+    font-size: 10px;
+    color: #888;
+    text-align: right;
+    border-left: 1px solid #e1e1e1;
+    padding-left: 10px;
+    margin-left: 10px;
+    line-height: 1;
+}
+
+/* The visual check mark (initially hidden) */
+.check-mark {
+    opacity: 0;
+    font-size: 20px;
+    color: #0d83dd;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+}
+
+.checkbox-box.checked .check-mark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-box.checked {
+    border-color: #0d83dd;
+}
+
+/* --- Challenge Modal Styling (The Grid) --- */
+
+.challenge-modal {
+    position: absolute;
+    top: calc(50% - 130px); /* Position above the checkbox */
+    left: calc(50% + 150px);
+    transform: translate(-50%, -100%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 250px;
+    display: none; /* Initially hidden, JS will show it */
+    z-index: 10;
+    animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.challenge-content {
+    padding: 15px;
+}
+
+.challenge-content p {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+    margin-bottom: 10px;
+}
+
+.grid-square {
+    width: 100%;
+    padding-top: 100%; /* Creates a perfect square */
+    background-color: #eee; /* Placeholder for images */
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.grid-square:hover {
+    background-color: #ddd;
+}
+
+.grid-square.selected {
+    border: 3px solid #0d83dd;
+    box-shadow: 0 0 0 1px #fff; /* White halo for visibility */
+}
+
+#verify-button {
+    background-color: #0d83dd;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+#verify-button:hover {
+    background-color: #0a6bbd;
+}
+
+.challenge-info {
+    font-size: 10px;
+    color: #888;
+    padding-top: 10px;
+    clear: both;
+}
+
+.challenge-info a {
+    color: #888;
+    text-decoration: none;
+}
+
+/* --- Submit Button (Optional) --- */
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.submit-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
